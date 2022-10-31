@@ -222,8 +222,8 @@ include('scripts.php');
 					<!-- END page-header -->
 				</div>
 
-				<div class="ms-auto">
-					<a href="#modal-task" data-bs-toggle="modal" class="btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
+				<div class="ms-auto" onclick="addbtn()">
+					<a href="#modal-task" data-bs-toggle="modal" class=" add_task btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
 				</div>
 			</div>
 			<div class="mb-3 d-md-flex fw-bold">

@@ -101,6 +101,9 @@ function saveTask(){
     $status = $_POST['status'];
     $date = $_POST['date'];
     $description = $_POST['description'];
+    if (empty($title)||empty($type)||empty($priority)||empty($status)||empty($date)||empty($description)) {
+      echo "PLEASE fill the blanks";
+    }
     //SQL INSERT
     $requete = "INSERT INTO tasks(`title`, `type_id`, `status_id`, `priority_id`, `task_datetime`, `description`) 
         VALUES ('$title','$type ','$status ','$priority','$date','$description')";
