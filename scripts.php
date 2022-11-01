@@ -12,12 +12,12 @@ if (isset($_POST['update']))      updateTask();
 if (isset($_POST['delete']))      deleteTask();
 
 function countertasks($numeroStatus){
-  $requete = "SELECT count(id) from tasks where status_id=1;";
+  $requete = "SELECT * from tasks where status_id=$numeroStatus;";
   //SQL SELECT 
   global $con;
   $query = mysqli_query($con, $requete);
 
-  return mysqli_fetch_assoc( $query);
+  return mysqli_num_rows($query);
  
 }
 
