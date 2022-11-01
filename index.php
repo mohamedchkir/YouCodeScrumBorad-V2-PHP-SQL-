@@ -1,5 +1,5 @@
 <?php
-include('scripts.php');
+require('scripts.php');
 ?>
 
 <!DOCTYPE html>
@@ -251,12 +251,22 @@ include('scripts.php');
 					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
 				</div>
 			<?php endif ?>
-			<div class="row">
 
+			<?php if (isset($_SESSION['ERROR'])) : ?>
+				<div class="alert alert-danger alert-dismissible fade show">
+					<strong>Error!</strong>
+					<?php
+					echo $_SESSION['ERROR'];
+					unset($_SESSION['ERROR']);
+					?>
+					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
+				</div>
+			<?php endif ?>
+			<div class="row">
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">To do (<span id="to-do-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">To do (<span id="to-do-tasks-count"><?php echo( countertasks([count(1)])); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>

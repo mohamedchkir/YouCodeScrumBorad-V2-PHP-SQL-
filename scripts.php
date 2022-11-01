@@ -11,6 +11,15 @@ if (isset($_POST['save']))        saveTask();
 if (isset($_POST['update']))      updateTask();
 if (isset($_POST['delete']))      deleteTask();
 
+function countertasks($numeroStatus){
+  $requete = "SELECT count(id) from tasks where status_id=1;";
+  //SQL SELECT 
+  global $con;
+  $query = mysqli_query($con, $requete);
+
+  return mysqli_fetch_assoc( $query);
+ 
+}
 
 function getTasks($numeroStatus){
     //CODE HERE
@@ -24,6 +33,7 @@ function getTasks($numeroStatus){
     $inpro = '';
     $todo = '';
     $done = '';
+   
     foreach ($query as $count => $row) {
         if ($row['status_id'] == 1) {
             $todo .= '
@@ -92,7 +102,6 @@ function getTasks($numeroStatus){
     }
 }
 
-
 function saveTask(){
     //CODE HERE
     $title = $_POST['title'];
@@ -102,7 +111,8 @@ function saveTask(){
     $date = $_POST['date'];
     $description = $_POST['description'];
     if (empty($title)||empty($type)||empty($priority)||empty($status)||empty($date)||empty($description)) {
-      echo "PLEASE fill the blanks";
+      $_SESSION['ERROR'] = " PLEASE fill the blanks!";
+      header('location: index.php');
     }
     //SQL INSERT
     $requete = "INSERT INTO tasks(`title`, `type_id`, `status_id`, `priority_id`, `task_datetime`, `description`) 
