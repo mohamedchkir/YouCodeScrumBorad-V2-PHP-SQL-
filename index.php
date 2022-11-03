@@ -266,7 +266,7 @@ require('scripts.php');
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">To do (<span id="to-do-tasks-count"><?php echo( countertasks(1)); ?></span>)</h4>
+							<h4 class="panel-title">To do (<span id="to-do-tasks-count"><?php echo (countertasks(1)); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -285,7 +285,7 @@ require('scripts.php');
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">In Progress (<span id="in-progress-tasks-count"><?php echo( countertasks(2)); ?></span>)</h4>
+							<h4 class="panel-title">In Progress (<span id="in-progress-tasks-count"><?php echo (countertasks(2)); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -304,7 +304,7 @@ require('scripts.php');
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">Done (<span id="done-tasks-count"><?php echo( countertasks(3)); ?></span>)</h4>
+							<h4 class="panel-title">Done (<span id="done-tasks-count"><?php echo (countertasks(3)); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -345,17 +345,17 @@ require('scripts.php');
 						<input type="hidden" name="task-id" id="task-id">
 						<div class="mb-3">
 							<label class="form-label">Title</label>
-							<input type="text" name="title" class="form-control" id="task-title" />
+							<input type="text" name="title" class="form-control" id="task-title" required />
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Type</label>
 							<div class="ms-3">
 								<div class="form-check mb-1">
-									<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-1" />
+									<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-1" required />
 									<label class="form-check-label" for="task-type-feature">Feature</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" name="task-type" type="radio" value="2" id="task-type-2" />
+									<input class="form-check-input" name="task-type" type="radio" value="2" id="task-type-2" required />
 									<label class="form-check-label" for="task-type-bug">Bug</label>
 								</div>
 							</div>
@@ -363,7 +363,7 @@ require('scripts.php');
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Priority</label>
-							<select class="form-select" name="priority" id="task-priority">
+							<select class="form-select" name="priority" id="task-priority" required>
 								<option value="">Please select</option>
 								<option value="1">Low</option>
 								<option value="2">Medium</option>
@@ -373,7 +373,7 @@ require('scripts.php');
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Status</label>
-							<select class="form-select" name="status" id="task-status">
+							<select class="form-select" name="status" id="task-status" required>
 								<option value="">Please select</option>
 								<option value="1">To Do</option>
 								<option value="2">In Progress</option>
@@ -382,11 +382,11 @@ require('scripts.php');
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Date</label>
-							<input type="datetime-local" name="date" class="form-control" id="task-date" />
+							<input type="datetime-local" name="date" class="form-control" id="task-date" required />
 						</div>
 						<div class="mb-0">
 							<label class="form-label">Description</label>
-							<textarea class="form-control" name="description" rows="10" id="task-description"></textarea>
+							<textarea class="form-control" name="description" rows="10" id="task-description" required></textarea>
 						</div>
 
 					</div>

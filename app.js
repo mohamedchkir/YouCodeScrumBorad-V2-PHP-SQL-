@@ -26,3 +26,23 @@ function addbtn() {
     document.getElementById("task-update-btn").style.display = "none";
     document.getElementById("task-delete-btn").style.display = "none";
 };
+
+//validation des input
+
+// const titleTask = document.getElementById('task-title')
+// const priorityTask = document.getElementById('task-priority')
+// const statusTask = document.getElementById('task-status')
+// const dateTask = document.getElementById('task-date')
+// const descriptionTask = document.getElementById('task-description')
+// const form = document.getElementById('form-task')
+
+
+// form.addEventListener('submit', (e) => {
+//     let message = [];
+//     if (titleTask.value === '' || titleTask.value === null) {
+//         message.push("please fill the blanks ")
+//     }
+//     if (message.length > 0) {
+//         e.preventDefault()
+//     }
+// })
